@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { collection, query, where, getDocs, writeBatch } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
     // Add a simple secret check for Vercel Cron
     const authHeader = request.headers.get('authorization');
